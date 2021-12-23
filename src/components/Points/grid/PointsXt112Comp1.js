@@ -61,7 +61,7 @@ const PointsXt112Comp1 = (props) => {
   };
 
   const PointsXt112Comp1Tab1 = () => {
-    return (
+    return (   
       <Grid container sx={{ height: '14.5vh' }}>
         <Grid item xs={12} sx={{ border: 0 }}>
           <Grid container item>
