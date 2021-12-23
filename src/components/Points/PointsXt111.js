@@ -78,7 +78,7 @@ const PointsXt111 = (props) => {
             <Grid item xs={12} sx={styleXt02}>
               <Box sx={{ display: 'inline-block' }}>
                 <b>Расчёт ХТ </b>
-                {resStr1} &nbsp;<b> Управление </b>
+                {resStr1} &nbsp;<b> Управление</b>
                 {resStr2}
                 &nbsp;
                 <b>
