@@ -41,6 +41,14 @@ const PointsXt112Comp2 = (props) => {
     borderColor: 'primary.main',
   };
 
+  const styleXTG04 = {
+    //height: '84.4vh',
+    border: 1,
+    marginLeft: 0.5,
+    borderRadius: 1,
+    borderColor: 'primary.main',
+  };
+
   const PointsXt112Comp2Tab1Header = () => {
     return (
       <Grid container item xs={12}>
@@ -89,7 +97,7 @@ const PointsXt112Comp2 = (props) => {
     <>
       {props.value === '2' && (
         <Stack direction="row">
-          <Grid item xs={3} sx={{ height: '86.5vh', marginRight: 0.5, border: 0 }}>
+          <Grid item xs={3} sx={{ height: '86.5vh', border: 0 }}>
             <Grid container>
               <Grid item xs={12} sx={styleXTG03}>
                 <PointsXt112Comp2Tab1Header />
@@ -98,7 +106,7 @@ const PointsXt112Comp2 = (props) => {
             </Grid>
           </Grid>
 
-          <Grid item xs sx={{ height: '86.5vh', border: 1 }}>
+          <Grid item xs sx={styleXTG04}>
             <Grid container>
               <PointsXt112Comp21 xctrl={props.xctrl} crossroad={props.crossroad} />
             </Grid>

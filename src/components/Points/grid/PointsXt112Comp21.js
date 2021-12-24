@@ -41,9 +41,9 @@ const PointsXt112Comp21 = (props) => {
 
   const [value, setValue] = React.useState(0);
 
-  let dlMas = props.xctrl.xctrls[crRoad].StrategyB.length;
-  const horizon = props.xctrl.xctrls[crRoad].StrategyB[dlMas - 1].xright;
-  const vertical = props.xctrl.xctrls[crRoad].StrategyB[dlMas - 1].xleft;
+  let dlMas = props.xctrl.xctrls[crRoad].StrategyA.length;
+  const horizon = props.xctrl.xctrls[crRoad].right;
+  const vertical = props.xctrl.xctrls[crRoad].left;
   const axisHorizon = horizon * 1;
   const steepHorizon = 12 / axisHorizon;
   const axisVertical = vertical * 1;
@@ -92,7 +92,7 @@ const PointsXt112Comp21 = (props) => {
     let ratio = 0;
     let luchP = 1;
     let luchO = 1;
-    let coler = 'red';
+    let coler = 'LightCyan';
     let i = 0;
     let j = 0;
 
@@ -113,75 +113,38 @@ const PointsXt112Comp21 = (props) => {
       matrix[j] = [];
 
       for (i = 0; i < horizon; i += scale) {
-        if (
-          dlMas >= 1 &&
-          props.xctrl.xctrls[crRoad].StrategyB[0].xright >= i &&
-          props.xctrl.xctrls[crRoad].StrategyB[0].xleft >= j
-        ) {
-          MakeMatrixColor(0);
-        } else {
+        coler = 'LightCyan';
+        for (ij = 0; i < dlMas; i++) {
           if (
-            dlMas >= 2 &&
-            props.xctrl.xctrls[crRoad].StrategyB[1].xright >= i &&
-            props.xctrl.xctrls[crRoad].StrategyB[1].xleft >= j
-          ) {
-            MakeMatrixColor(1);
-          } else {
-            if (
-              dlMas >= 3 &&
-              props.xctrl.xctrls[crRoad].StrategyB[2].xright >= i &&
-              props.xctrl.xctrls[crRoad].StrategyB[2].xleft >= j
-            ) {
-              MakeMatrixColor(2);
-            } else {
-              if (
-                dlMas >= 4 &&
-                props.xctrl.xctrls[crRoad].StrategyB[3].xright >= i &&
-                props.xctrl.xctrls[crRoad].StrategyB[3].xleft >= j
-              ) {
-                MakeMatrixColor(3);
-              } else {
-                if (
-                  dlMas >= 5 &&
-                  props.xctrl.xctrls[crRoad].StrategyB[4].xright >= i &&
-                  props.xctrl.xctrls[crRoad].StrategyB[4].xleft >= j
-                ) {
-                  MakeMatrixColor(4);
-                } else {
-                  if (
-                    dlMas >= 6 &&
-                    props.xctrl.xctrls[crRoad].StrategyB[5].xright >= i &&
-                    props.xctrl.xctrls[crRoad].StrategyB[5].xleft >= j
-                  ) {
-                    MakeMatrixColor(5);
-                  }
-                }
-              }
-            }
-          }
+            props.xctrl.xctrls[crRoad].StrategyA[ij].right === i &&
+            props.xctrl.xctrls[crRoad].StrategyA[ij].left >= j
+          ) { coler = 'black'; }
+
         }
-        matrix[j].push(coler);
+
       }
+      matrix[j].push(coler);
     }
-    matrix = matrix.filter(function (el) {
-      //избавляемся от пустых значений
-      return el != null;
-    });
-    matrix.reverse(); //переворачиваем матрицу
-  };
+  }
+  matrix = matrix.filter(function (el) {
+    //избавляемся от пустых значений
+    return el != null;
+  });
+  matrix.reverse(); //переворачиваем матрицу
+};
 
-  return (
-    <Grid item container xs={12}>
-      <Button sx={styleXTG02} variant="contained" onClick={() => setValue(1)}>
-        <b>Построить диаграмму быстро</b>
-      </Button>
-      <Button sx={styleXTG02} variant="contained" onClick={() => setValue(2)}>
-        <b>Диаграмма в высоком качестве</b>
-      </Button>
+return (
+  <Grid item container xs={12}>
+    <Button sx={styleXTG02} variant="contained" onClick={() => setValue(1)}>
+      <b>Построить диаграмму быстро</b>
+    </Button>
+    <Button sx={styleXTG02} variant="contained" onClick={() => setValue(2)}>
+      <b>Диаграмма в высоком качестве</b>
+    </Button>
 
-      <>{value > 0 && <>{PointsXt112Comp1Tab4()}</>}</>
-    </Grid>
-  );
+    <>{value > 0 && <>{PointsXt112Comp1Tab4()}</>}</>
+  </Grid>
+);
 };
 
 export default PointsXt112Comp21;
