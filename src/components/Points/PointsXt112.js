@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 import PointsXt112Comp1 from './grid/PointsXt112Comp1';
 
 const PointsXt112 = (props) => {
-  console.log('crossroad112:', props.crossroad);
   const [value, setValue] = React.useState('1');
 
   const PointsXt112Menu = () => {

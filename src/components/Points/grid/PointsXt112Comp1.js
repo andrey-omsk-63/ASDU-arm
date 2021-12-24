@@ -6,7 +6,6 @@ import Stack from '@mui/material/Stack';
 import PointsXt112Comp11 from './PointsXt112Comp11';
 
 const PointsXt112Comp1 = (props) => {
-  console.log('crossroad112C:', props.crossroad);
   const styleXTG00 = {
     fontSize: 11,
     borderBottom: 1,
