@@ -29,14 +29,14 @@ const PointsXtGrid1112 = (props) => {
 
   const HeaderPXG1112 = () => {
     return (
-      <Grid item container xs={10}>
-        <Grid item xs={2} sx={styleXTG02}>
+      <Grid item container xs={12}>
+        <Grid item xs={1.5} sx={styleXTG02}>
           <b>№</b>
         </Grid>
-        <Grid item xs={4} sx={styleXTG02}>
+        <Grid item xs={5.25} sx={styleXTG02}>
           <b>КС на ДК</b>
         </Grid>
-        <Grid item xs={4} sx={styleXTG02}>
+        <Grid item xs={5.25} sx={styleXTG02}>
           <b>ПК</b>
         </Grid>
       </Grid>
@@ -48,14 +48,14 @@ const PointsXtGrid1112 = (props) => {
 
     for (let i = 0; i < props.xctrl.ext.length; i++) {
       resStr.push(
-        <Grid key={Math.random()} container item xs={10}>
-          <Grid key={Math.random()} xs={2} item sx={styleXTG03}>
+        <Grid key={Math.random()} container item xs={12}>
+          <Grid key={Math.random()} xs={1.5} item sx={styleXTG03}>
             {i + 1}
           </Grid>
-          <Grid key={Math.random()} xs={4} item sx={styleXTG03}>
+          <Grid key={Math.random()} xs={5.25} item sx={styleXTG03}>
             {props.xctrl.ext[i][0]}
           </Grid>
-          <Grid key={Math.random()} xs={4} item sx={styleXTG03}>
+          <Grid key={Math.random()} xs={5.25} item sx={styleXTG03}>
             {props.xctrl.ext[i][1]}
           </Grid>
         </Grid>,

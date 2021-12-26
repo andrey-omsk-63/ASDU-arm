@@ -89,62 +89,67 @@ const PointsXt112Comp21 = (props) => {
   };
 
   const MakeMatrix = () => {
-    let ratio = 0;
-    let luchP = 1;
-    let luchO = 1;
-    let coler = 'LightCyan';
+    // let ratio = 0;
+    // let luchP = 1;
+    // let luchO = 1;
+    //let coler = 'LightCyan';
+    let coler = 'white';
     let i = 0;
     let j = 0;
 
-    const MakeMatrixColor = (num) => {
-      luchP = props.xctrl.xctrls[crRoad].StrategyB[num].vleft;
-      luchO = props.xctrl.xctrls[crRoad].StrategyB[num].vright;
-      ratio =
-        props.xctrl.xctrls[crRoad].StrategyB[num].xright /
-        props.xctrl.xctrls[crRoad].StrategyB[num].xleft;
-      coler = colorsGraf[num * 3];
-      if (luchP !== 1 || luchO !== 1) {
-        if (i < j * luchO * ratio) coler = colorsGraf[num * 3 + 1];
-        if (i >= j * luchP * ratio) coler = colorsGraf[num * 3 + 2];
-      }
-    };
+    // const MakeMatrixColor = (num) => {
+    //   luchP = props.xctrl.xctrls[crRoad].StrategyB[num].vleft;
+    //   luchO = props.xctrl.xctrls[crRoad].StrategyB[num].vright;
+    //   ratio =
+    //     props.xctrl.xctrls[crRoad].StrategyB[num].xright /
+    //     props.xctrl.xctrls[crRoad].StrategyB[num].xleft;
+    //   coler = colorsGraf[num * 3];
+    //   if (luchP !== 1 || luchO !== 1) {
+    //     if (i < j * luchO * ratio) coler = colorsGraf[num * 3 + 1];
+    //     if (i >= j * luchP * ratio) coler = colorsGraf[num * 3 + 2];
+    //   }
+    // };
+    let ch = 0;
 
     for (j = 0; j < vertical; j += scale) {
       matrix[j] = [];
 
       for (i = 0; i < horizon; i += scale) {
         coler = 'LightCyan';
-        for (ij = 0; i < dlMas; i++) {
-          if (
-            props.xctrl.xctrls[crRoad].StrategyA[ij].right === i &&
-            props.xctrl.xctrls[crRoad].StrategyA[ij].left >= j
-          ) { coler = 'black'; }
 
+        for (let ij = 0; ij < dlMas; ij++) {
+          if (
+            props.xctrl.xctrls[crRoad].StrategyA[ij].xright === i &&
+            props.xctrl.xctrls[crRoad].StrategyA[ij].xleft === j
+          ) {
+            coler = 'black';
+            ch++;
+          }
         }
 
+        matrix[j].push(coler);
       }
-      matrix[j].push(coler);
     }
-  }
-  matrix = matrix.filter(function (el) {
-    //избавляемся от пустых значений
-    return el != null;
-  });
-  matrix.reverse(); //переворачиваем матрицу
-};
+    console.log('ch', ch);
+    matrix = matrix.filter(function (el) {
+      //избавляемся от пустых значений
+      return el != null;
+    });
+    matrix.reverse(); //переворачиваем матрицу
+  };
 
-return (
-  <Grid item container xs={12}>
-    <Button sx={styleXTG02} variant="contained" onClick={() => setValue(1)}>
-      <b>Построить диаграмму быстро</b>
-    </Button>
-    <Button sx={styleXTG02} variant="contained" onClick={() => setValue(2)}>
-      <b>Диаграмма в высоком качестве</b>
-    </Button>
+  return (
+    <Grid item container xs={12}>
+      <Button sx={styleXTG02} variant="contained" onClick={() => setValue(1)}>
+        <b>Построить диаграмму быстро</b>
+      </Button>
+      <Button sx={styleXTG02} variant="contained" onClick={() => setValue(2)}>
+        <b>Диаграмма в высоком качестве</b>
+      </Button>
 
-    <>{value > 0 && <>{PointsXt112Comp1Tab4()}</>}</>
-  </Grid>
-);
+      <>{value > 0 && <>{PointsXt112Comp1Tab4()}</>}</>
+    </Grid>
+  );
 };
 
 export default PointsXt112Comp21;

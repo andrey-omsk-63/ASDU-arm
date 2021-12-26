@@ -30,7 +30,7 @@ const PointsXtGrid1111 = (props) => {
 
   const HeaderPXG1111 = () => {
     return (
-      <Grid item container xs={11}>
+      <Grid item container xs={12}>
         <Grid item xs={2} sx={styleXTG02}></Grid>
         <Grid item xs={3} sx={styleXTG02}>
           <b>КС на ДК</b>
@@ -38,7 +38,7 @@ const PointsXtGrid1111 = (props) => {
         <Grid item xs={3} sx={styleXTG02}>
           <b>ПК</b>
         </Grid>
-        <Grid item xs={3} sx={styleXTG02}>
+        <Grid item xs={4} sx={styleXTG02}>
           <b>Качество</b>
         </Grid>
       </Grid>
@@ -65,7 +65,7 @@ const PointsXtGrid1111 = (props) => {
     if (Object.keys(props.xctrl.results).length > 0) {
       for (let i = 0; i < props.xctrl.results.result.length; i++) {
         resStr.push(
-          <Grid key={Math.random()} container xs={11} item>
+          <Grid key={Math.random()} container xs={12} item>
             <Grid key={Math.random()} xs={2} item sx={styleXTG03}>
               {TimeStr(props.xctrl.results.result[i].Time)}
             </Grid>
@@ -75,7 +75,7 @@ const PointsXtGrid1111 = (props) => {
             <Grid key={Math.random()} xs={3} item sx={styleXTG03}>
               {props.xctrl.results.result[i].Value[1]}
             </Grid>
-            <Grid key={Math.random()} xs={3} item sx={styleXTG03}>
+            <Grid key={Math.random()} xs={4} item sx={styleXTG03}>
               н/д
             </Grid>
           </Grid>,

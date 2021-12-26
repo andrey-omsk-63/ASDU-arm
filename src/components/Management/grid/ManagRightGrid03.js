@@ -4,9 +4,11 @@ import Grid from '@mui/material/Grid';
 const ManagementRightGrid03 = () => {
   const styleMRG03 = {
     borderRight: 1,
+    borderBottom: 1,
     borderColor: 'primary.main',
-    padding: 1,
+    padding: 0.4,
     textAlign: 'center',
+    backgroundColor: '#C0C0C0',
   };
 
   const styleMRG04 = {
@@ -21,7 +23,7 @@ const ManagementRightGrid03 = () => {
 
   return (
     <Grid item container>
-      <Grid item xs={24} sx={styleMRG04}>
+      <Grid item xs={12} sx={styleMRG04}>
         <Grid item container>
           <Grid item xs={1} sx={styleMRG03}>
             №
@@ -39,13 +41,7 @@ const ManagementRightGrid03 = () => {
             Текущее состояние
           </Grid>
 
-          <Grid
-            item
-            xs={2}
-            sx={{
-              padding: 1,
-              textAlign: 'center',
-            }}>
+          <Grid item xs={3} sx={styleMRG03}>
             Состояние ХТ
           </Grid>
         </Grid>

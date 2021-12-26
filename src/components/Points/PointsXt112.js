@@ -51,10 +51,6 @@ const PointsXt112 = (props) => {
     return <div>{props.value === '3' && <div>Расчёт</div>}</div>;
   };
 
-  // const PointsXt112Comp2 = (props) => {
-  //   return <div>{props.value === '2' && <div>Oбласти</div>}</div>;
-  // };
-
   return (
     <Box sx={{ marginTop: -2, marginLeft: -3.5, marginRight: 5 }}>
       <Grid container item sx={{ border: 0 }}>
