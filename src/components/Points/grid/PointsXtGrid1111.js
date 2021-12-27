@@ -47,7 +47,6 @@ const PointsXtGrid1111 = (props) => {
 
   const TimeStr = (tim) => {
     let timLiner = '';
-    // let tim = props.xctrl.results.result[i].Time;
     let hour = Math.trunc(tim / 60);
     let min = tim % 60;
 
