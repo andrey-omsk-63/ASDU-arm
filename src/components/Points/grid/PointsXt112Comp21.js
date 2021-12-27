@@ -89,43 +89,42 @@ const PointsXt112Comp21 = (props) => {
   };
 
   const MakeMatrix = () => {
-    // let ratio = 0;
-    // let luchP = 1;
-    // let luchO = 1;
-    //let coler = 'LightCyan';
-    let coler = 'white';
-    let i = 0;
-    let j = 0;
 
-    // const MakeMatrixColor = (num) => {
-    //   luchP = props.xctrl.xctrls[crRoad].StrategyB[num].vleft;
-    //   luchO = props.xctrl.xctrls[crRoad].StrategyB[num].vright;
-    //   ratio =
-    //     props.xctrl.xctrls[crRoad].StrategyB[num].xright /
-    //     props.xctrl.xctrls[crRoad].StrategyB[num].xleft;
-    //   coler = colorsGraf[num * 3];
-    //   if (luchP !== 1 || luchO !== 1) {
-    //     if (i < j * luchO * ratio) coler = colorsGraf[num * 3 + 1];
-    //     if (i >= j * luchP * ratio) coler = colorsGraf[num * 3 + 2];
-    //   }
-    // };
+    let coler = 'white';
+
+    let coorPointX = 0;
+    let coorPointY = 0;
+
+
     let ch = 0;
 
-    for (j = 0; j < vertical; j += scale) {
+    for (let j = 0; j < vertical; j += scale) {
       matrix[j] = [];
 
-      for (i = 0; i < horizon; i += scale) {
+      for (let i = 0; i < horizon; i += scale) {
         coler = 'LightCyan';
+        let mass = [];
+        let flag = true;
 
         for (let ij = 0; ij < dlMas; ij++) {
-          if (
-            props.xctrl.xctrls[crRoad].StrategyA[ij].xright === i &&
-            props.xctrl.xctrls[crRoad].StrategyA[ij].xleft === j
+          coorPointY = props.xctrl.xctrls[crRoad].StrategyA[ij].xleft;
+          coorPointX = props.xctrl.xctrls[crRoad].StrategyA[ij].xright
+          if (coorPointY === j && coorPointX === i
           ) {
             coler = 'black';
             ch++;
+            flag = false;
           }
+          let kvx = (i - coorPointX) ** 2
+          let kvy = (j - coorPointY) ** 2
+          let kvd = (kvx + kvy)
+          mass.push(kvd)
         }
+        if (flag) {
+          let maxInMas = Math.min.apply(null, mass);
+          let maxNum = mass.indexOf(maxInMas);
+          coler = colorsGraf[maxNum];
+       }
 
         matrix[j].push(coler);
       }

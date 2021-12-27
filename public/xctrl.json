@@ -37,36 +37,14 @@
           "xleft": 50,
           "xright": 40
         },
-        {
-          "pk": 2,
-          "desc": "two",
-          "xleft": 130,
-          "xright": 120
-        },
-        {
-          "pk": 3,
-          "desc": "three",
-          "xleft": 140,
-          "xright": 100
-        },
+       
         {
           "pk": 4,
           "desc": "four",
           "xleft": 110,
           "xright": 150
         },
-        {
-          "pk": 5,
-          "desc": "five",
-          "xleft": 650,
-          "xright": 480
-        },
-        {
-          "pk": 6,
-          "desc": "six",
-          "xleft": 750,
-          "xright": 300
-        },
+        
         {
           "pk": 7,
           "desc": "seven",
