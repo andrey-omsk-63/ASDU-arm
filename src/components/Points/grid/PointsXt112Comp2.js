@@ -53,7 +53,7 @@ const PointsXt112Comp2 = (props) => {
     return (
       <Grid container item xs={12}>
         <Grid xs={2} item sx={styleXTG02}>
-          <b>План</b>
+          <b>КС</b>
         </Grid>
         <Grid xs={3} item sx={styleXTG02}>
           <b>Прямой</b>

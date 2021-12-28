@@ -51,26 +51,50 @@ const PointsXt112Comp11 = (props) => {
   let matrix = [[]];
   let scale = 5;
 
+  let coler = 'red';
+  let colerOld = [];
+  let masStr = [];
+  let masCol = [];
+  let colBl = 0;
+
   const PointsXt112Comp1Tab4 = () => {
     let resStr = [];
     let resSps = [];
 
-    if (value > 1) scale = 1;
+    if (value > 1) scale = 2;
 
     MakeMatrix();
 
     const PointsXt112Comp1Tab4Str = (j) => {
       resStr = [];
-      let coler = 'red';
+      coler = 'red';
+      colerOld = matrix[j / scale][0 / scale];
+      masStr = [];
+      masCol = [];
+      colBl = 0;
+
       for (let i = 0; i < horizon; i += scale) {
         coler = matrix[j / scale][i / scale];
+        if (coler === colerOld) {
+          colBl++
+        } else {
+          masStr.push(colBl);
+          masCol.push(colerOld);
+          colBl = 1;
+          colerOld = coler
+        }
+      }
+      masStr.push(colBl);
+      masCol.push(coler);
+
+      for (let i = 0; i < masStr.length; i++) {
         resStr.push(
           <Grid
             key={i}
-            xs={steepHorizon * scale}
+            xs={steepHorizon * scale * masStr[i]}
             item
             sx={{
-              backgroundColor: coler,
+              backgroundColor: masCol[i],
               height: String(steepVertical * scale) + 'vh',
             }}></Grid>,
         );
