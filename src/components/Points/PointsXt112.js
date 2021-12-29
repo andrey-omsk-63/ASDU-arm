@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 
 import PointsXt112Comp1 from './grid/PointsXt112Comp1';
 import PointsXt112Comp2 from './grid/PointsXt112Comp2';
+import PointsXt112Comp3 from './grid/PointsXt112Comp3';
 
 const PointsXt112 = (props) => {
   const [value, setValue] = React.useState('1');
@@ -47,10 +48,6 @@ const PointsXt112 = (props) => {
     );
   };
 
-  const PointsXt112Comp3 = (props) => {
-    return <div>{props.value === '3' && <div>Расчёт</div>}</div>;
-  };
-
   return (
     <Box sx={{ marginTop: -2, marginLeft: -3.5, marginRight: 5 }}>
       <Grid container item sx={{ border: 0 }}>
@@ -74,7 +71,12 @@ const PointsXt112 = (props) => {
                   value={value}
                   crossroad={props.crossroad}
                 />
-                <PointsXt112Comp3 value={value} />
+                <PointsXt112Comp3
+                  open={props.open}
+                  xctrl={props.xctrl}
+                  value={value}
+                  crossroad={props.crossroad}
+                />
               </Grid>
             </Grid>
           </Grid>
