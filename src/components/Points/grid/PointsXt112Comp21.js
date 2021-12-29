@@ -76,12 +76,12 @@ const PointsXt112Comp21 = (props) => {
       for (let i = 0; i < horizon; i += scale) {
         coler = matrix[j / scale][i / scale];
         if (coler === colerOld) {
-          colBl++
+          colBl++;
         } else {
           masStr.push(colBl);
           masCol.push(colerOld);
           colBl = 1;
-          colerOld = coler
+          colerOld = coler;
         }
       }
       masStr.push(colBl);
@@ -104,7 +104,7 @@ const PointsXt112Comp21 = (props) => {
 
     for (let j = 0; j < vertical; j += scale) {
       resSps.push(
-        <Grid key={j} item container >
+        <Grid key={j} item container>
           {PointsXt112Comp1Tab4StrOptim(j)}
         </Grid>,
       );
@@ -113,7 +113,6 @@ const PointsXt112Comp21 = (props) => {
   };
 
   const MakeMatrix = () => {
-
     let coler = 'white';
 
     let coorPointX = 0;
@@ -129,15 +128,14 @@ const PointsXt112Comp21 = (props) => {
 
         for (let ij = 0; ij < dlMas; ij++) {
           coorPointY = props.xctrl.xctrls[crRoad].StrategyA[ij].xleft;
-          coorPointX = props.xctrl.xctrls[crRoad].StrategyA[ij].xright
-          if (coorPointY === j && coorPointX === i
-          ) {
+          coorPointX = props.xctrl.xctrls[crRoad].StrategyA[ij].xright;
+          if (coorPointY === j && coorPointX === i) {
             coler = 'black';
             flag = false;
           }
-          let kvx = (i - coorPointX) ** 2
-          let kvy = (j - coorPointY) ** 2
-          mass.push(kvx + kvy)
+          let kvx = (i - coorPointX) ** 2;
+          let kvy = (j - coorPointY) ** 2;
+          mass.push(kvx + kvy);
         }
         if (flag) {
           coler = colorsGraf[mass.indexOf(Math.min.apply(null, mass))];
