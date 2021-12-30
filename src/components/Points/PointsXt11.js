@@ -12,7 +12,6 @@ import PointsXt111 from './PointsXt111';
 import PointsXt112 from './PointsXt112';
 
 const PointsXt11 = (props) => {
-
   const stylePXt1 = {
     fontSize: 10,
     maxHeight: '20px',
@@ -62,7 +61,6 @@ const PointsXt11 = (props) => {
 
       const SpisPerekr = () => {
         let resStr = [];
-        console.log(points.xctrls)
         for (let i = 0; i < points.xctrls.length; i++) {
           resStr.push(
             <Button key={i} sx={stylePXt1} variant="contained" onClick={() => handleClose(i)}>
@@ -90,7 +88,7 @@ const PointsXt11 = (props) => {
       );
     }
   };
-  
+
   React.useEffect(() => {
     axios.get(ipAdress).then(({ data }) => {
       setPoints(data);
