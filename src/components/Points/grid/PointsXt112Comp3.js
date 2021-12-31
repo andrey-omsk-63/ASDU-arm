@@ -80,13 +80,13 @@ const PointsXt112Comp3 = (props) => {
       }
       labels.push(int);
     }
-
+    //график прямого
     let datas = [];
     for (let i = 0; i < props.xctrl.results[namer].length; i++) {
       datas.push(props.xctrl.results[namer][i].Value[0]);
     }
     data.datasets[0].data = datas;
-
+    //график обратного
     datas = [];
     for (let i = 0; i < props.xctrl.results[namer].length; i++) {
       datas.push(props.xctrl.results[namer][i].Value[1]);
@@ -94,7 +94,7 @@ const PointsXt112Comp3 = (props) => {
     data.datasets[1].data = datas;
 
     return (
-      <Grid item xs sx={{ height: '28vh', border: 0 }}>
+      <Grid item xs sx={{ height: '28vh' }}>
         <PointsGraf01 />
       </Grid>
     );

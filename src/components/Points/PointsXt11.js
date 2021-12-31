@@ -64,7 +64,7 @@ const PointsXt11 = (props) => {
         for (let i = 0; i < points.xctrls.length; i++) {
           resStr.push(
             <Button key={i} sx={stylePXt1} variant="contained" onClick={() => handleClose(i)}>
-              <b>XT:1:1:{points.xctrls[i].name}</b>
+              <b>XT:1:1:&nbsp;&nbsp;{points.xctrls[i].name}</b>
             </Button>,
           );
         }
