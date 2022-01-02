@@ -63,7 +63,7 @@ const PointsXt111 = (props) => {
 
   if (props.open) {
     if (props.xctrl.switch) resStr1 = 'Включён';
-    if (props.xctrl.release) resStr2 = 'Включёнo';
+    if (props.xctrl.release) resStr2 = 'Включeнo';
   }
 
   return (
@@ -77,8 +77,8 @@ const PointsXt111 = (props) => {
 
             <Grid item xs={12} sx={styleXt02}>
               <Box sx={{ display: 'inline-block' }}>
-                <b>Расчёт ХТ </b>
-                {resStr1} &nbsp;<b> Управление</b>
+                <b>Расчёт ХТ </b>&nbsp;
+                {resStr1} &nbsp;<b> Управление</b>&nbsp;&nbsp;
                 {resStr2}
                 &nbsp;
                 <b>
@@ -92,7 +92,7 @@ const PointsXt111 = (props) => {
 
             <Grid item xs={12} sx={styleXt03}>
               <Grid item>
-                <Box sx={{ marginRight: -2 }}>
+                <Box sx={{ marginRight: -1.5 }}>
                   <Grid container>
                     <Grid item xs={4} sx={styleXt04}>
                       <PointsXtGrid1111 open={props.open} xctrl={props.xctrl} />
