@@ -11,60 +11,44 @@ import Points from './components/Points/Points';
 import Statistics from './components/Statistics/Statistics';
 
 const App = () => {
+  const styleApp01 = {
+    fontSize: 12,
+    marginRight: 1,
+    width: '12vh',
+    maxHeight: '21px',
+    minHeight: '21px',
+    backgroundColor: '#F1F3F4',
+    color: 'black',
+  };
+
+  const styleApp02 = {
+    fontSize: 12,
+    marginRight: 1,
+    maxHeight: '21px',
+    minHeight: '21px',
+    width: '24vh',
+    backgroundColor: '#F1F3F4',
+    color: 'black',
+  };
+
   const [value, setValue] = React.useState('1');
 
   return (
     <>
-      {/* <Header /> */}
       <Box sx={{ width: '100%', marginLeft: 1, typography: 'body2' }}>
         <TabContext value={value}>
           <Box sx={{ marginLeft: -1, backgroundColor: '#F1F5FB' }}>
             <Box sx={{ marginLeft: 1 }}>
               <Stack direction="row">
-                <Button
-                  sx={{
-                    fontSize: 12,
-                    marginRight: 1,
-                    width: '12vh',
-                    maxHeight: '21px',
-                    minHeight: '21px',
-                    backgroundColor: '#F1F3F4',
-                    color: 'black',
-                  }}
-                  size="small"
-                  variant="contained"
-                  onClick={() => setValue('1')}>
+                <Button sx={styleApp01} variant="contained" onClick={() => setValue('1')}>
                   <b>Управление</b>
                 </Button>
 
-                <Button
-                  sx={{
-                    fontSize: 12,
-                    marginRight: 1,
-                    maxHeight: '21px',
-                    minHeight: '21px',
-                    width: '24vh',
-                    backgroundColor: '#F1F3F4',
-                    color: 'black',
-                  }}
-                  size="small"
-                  variant="contained"
-                  onClick={() => setValue('2')}>
+                <Button sx={styleApp02} variant="contained" onClick={() => setValue('2')}>
                   <b>Характерные точки</b>
                 </Button>
 
-                <Button
-                  sx={{
-                    fontSize: 12,
-                    width: '12vh',
-                    maxHeight: '21px',
-                    minHeight: '21px',
-                    backgroundColor: '#F1F3F4',
-                    color: 'black',
-                  }}
-                  size="small"
-                  variant="contained"
-                  onClick={() => setValue('3')}>
+                <Button sx={styleApp01} variant="contained" onClick={() => setValue('3')}>
                   <b>Статистика</b>
                 </Button>
                 <Header />

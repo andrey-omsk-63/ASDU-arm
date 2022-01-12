@@ -21,7 +21,7 @@ const ManagementLeftGrid = () => {
           borderRadius: 1,
           borderColor: 'primary.main',
           margin: 1,
-          height: '95.4vh',
+          height: '94.6vh',
         }}>
         <Grid container>
           <Grid item xs={6.5} sx={styleMG02}>
