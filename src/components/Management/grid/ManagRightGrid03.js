@@ -18,7 +18,7 @@ const ManagementRightGrid03 = () => {
     marginTop: 0.5,
     marginLeft: -0.5,
     marginRight: 0.5,
-    height: '84.8vh',
+    height: '88.0vh',
   };
 
   return (
