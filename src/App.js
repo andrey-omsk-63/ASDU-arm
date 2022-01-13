@@ -35,27 +35,24 @@ const App = () => {
 
   return (
     <>
-      <Box sx={{ width: '100%', marginLeft: 1, typography: 'body2' }}>
+      <Box sx={{ typography: 'body2' }}>
         <TabContext value={value}>
-          <Box sx={{ marginLeft: -1, backgroundColor: '#F1F5FB' }}>
-            <Box sx={{ marginLeft: 1 }}>
-              <Stack direction="row">
-                <Button sx={styleApp01} variant="contained" onClick={() => setValue('1')}>
-                  <b>Управление</b>
-                </Button>
+          <Box sx={{ marginLeft: 0.2, backgroundColor: '#F1F5FB' }}>
+            <Stack direction="row">
+              <Button sx={styleApp01} variant="contained" onClick={() => setValue('1')}>
+                <b>Управление</b>
+              </Button>
 
-                <Button sx={styleApp02} variant="contained" onClick={() => setValue('2')}>
-                  <b>Характерные точки</b>
-                </Button>
+              <Button sx={styleApp02} variant="contained" onClick={() => setValue('2')}>
+                <b>Характерные точки</b>
+              </Button>
 
-                <Button sx={styleApp01} variant="contained" onClick={() => setValue('3')}>
-                  <b>Статистика</b>
-                </Button>
-                <Header />
-              </Stack>
-            </Box>
+              <Button sx={styleApp01} variant="contained" onClick={() => setValue('3')}>
+                <b>Статистика</b>
+              </Button>
+              <Header />
+            </Stack>
           </Box>
-
           <TabPanel value="1">
             <Management />
           </TabPanel>
