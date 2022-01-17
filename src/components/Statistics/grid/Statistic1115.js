@@ -84,7 +84,7 @@ const Statistic1115 = () => {
   const StatGraf00 = () => {
     if (isOpen && value !== '0') {
       const colMin = 60 / matrix[0].TLen;
-      const val = Number(value - 1);
+      const val = Number(value) - 1;
 
       console.log('val=', val);
       for (let i = 0; i < matrix.length; i++) {
