@@ -39,6 +39,7 @@ const ModalSetting = () => {
   const [openSet, setOpenSet] = React.useState(false);
   const handleOpenSet = () => setOpenSet(true);
   const handleCloseSet = (event, reason) => {
+    console.log('1111', event)
     if (reason !== 'backdropClick') setOpenSet(false);
   };
   const styleSet = {
@@ -65,6 +66,7 @@ const ModalSetting = () => {
     });
 
     const handleChange = (prop) => (event) => {
+      console.log('3333', typeof prop, typeof event)
       setValues({ ...values, [prop]: event.target.value });
       formSett[0].passw = event.target.value;
     };
@@ -77,6 +79,7 @@ const ModalSetting = () => {
     };
 
     const handleMouseDownPassword = (event) => {
+      console.log('2222', event)
       event.preventDefault();
     };
 
