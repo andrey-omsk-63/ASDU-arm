@@ -29,7 +29,7 @@ const PointsXt111 = (props) => {
     padding: 1,
     margin: 1,
     marginTop: -1.5,
-    marginLeft: -1,
+    marginLeft: -0.5,
     height: '80vh',
   };
 
