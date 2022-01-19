@@ -347,11 +347,13 @@ const Statistic110 = () => {
           </Grid>,
         );
       }
+      console.log('111111', resSps);
     }
     return resSps;
   };
 
   const CreateMatrix = () => {
+    console.log('points', points);
     const step = points[0].TLen;
     const typer = points[0].Type;
     let rows = 1440 / step;
