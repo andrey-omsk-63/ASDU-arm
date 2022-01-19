@@ -109,6 +109,7 @@ const ModalSetting = () => {
   };
 
   const TextMaskCustom = React.forwardRef(function TextMaskCustom(props, ref) {
+    console.log('props:', props)
     const { onChange, ...other } = props;
     return (
       <IMaskInput
