@@ -39,7 +39,7 @@ const ModalSetting = () => {
   const [openSet, setOpenSet] = React.useState(false);
   const handleOpenSet = () => setOpenSet(true);
   const handleCloseSet = (event, reason) => {
-    console.log('1111', event)
+    console.log('1111', event);
     if (reason !== 'backdropClick') setOpenSet(false);
   };
   const styleSet = {
@@ -66,7 +66,7 @@ const ModalSetting = () => {
     });
 
     const handleChange = (prop) => (event) => {
-      console.log('3333', typeof prop, typeof event)
+      console.log('3333', typeof prop, typeof event);
       setValues({ ...values, [prop]: event.target.value });
       formSett[0].passw = event.target.value;
     };
@@ -79,7 +79,7 @@ const ModalSetting = () => {
     };
 
     const handleMouseDownPassword = (event) => {
-      console.log('2222', event)
+      console.log('2222', event);
       event.preventDefault();
     };
 
@@ -109,7 +109,11 @@ const ModalSetting = () => {
   };
 
   const TextMaskCustom = React.forwardRef(function TextMaskCustom(props, ref) {
+<<<<<<< HEAD
     console.log('props:', props)
+=======
+    console.log('444', props);
+>>>>>>> 9eba9a2fb02123f1625fbf997af822f18b48bbd3
     const { onChange, ...other } = props;
     return (
       <IMaskInput
