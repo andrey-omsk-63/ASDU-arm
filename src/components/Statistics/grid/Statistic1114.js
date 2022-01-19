@@ -22,11 +22,10 @@ const Statistic1114 = () => {
     fontSize: 11,
     backgroundColor: '#F1F3F4',
     color: 'black',
-    // maxWidth: '4.55vh',
+
     maxWidth: '2.7vh',
     maxHeight: '23px',
-    // minWidth: '4.55vh',
-    minWidth: '2.7vh',
+
     minHeight: '23px',
   };
 
