@@ -348,6 +348,8 @@ const Statistic110 = () => {
         );
       }
       console.log('111111', resSps);
+      console.log('Typeof:', typeof resSps);
+
     }
     return resSps;
   };
